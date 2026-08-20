@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Workplace Productivity Assistant - professional AI productivity prototype." />
+  <title>AI Workplace Productivity Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AI</div>
+        <div>
+          <strong>Workplace AI</strong>
+          <span>Productivity Assistant</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-item" data-view="email"><span>✉</span> Email Generator</button>
+        <button class="nav-item" data-view="meeting"><span>▤</span> Meeting Summarizer</button>
+        <button class="nav-item" data-view="tasks"><span>✓</span> Task Planner</button>
+        <button class="nav-item" data-view="research"><span>⌕</span> Research Assistant</button>
+        <button class="nav-item" data-view="chat"><span>◌</span> AI Chatbot</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="responsible-box">
+          <div class="tiny-label">RESPONSIBLE AI</div>
+          <p>Review AI-generated content before using it for important workplace decisions.</p>
+        </div>
+        <button class="nav-item" data-view="about"><span>ⓘ</span> About & Prompts</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div>
+          <div class="eyebrow" id="pageEyebrow">WORKSPACE</div>
+          <h1 id="pageTitle">Good afternoon, Professional</h1>
+        </div>
+        <div class="top-actions">
+          <span class="status-pill"><i></i> AI Assistant Ready</span>
+          <div class="avatar">P</div>
+        </div>
+      </header>
+
+      <section class="content">
+        <!-- DASHBOARD -->
+        <div class="view active" id="view-dashboard">
+          <div class="hero-card">
+            <div>
+              <span class="hero-kicker">AI WORKPLACE PRODUCTIVITY</span>
+              <h2>Work smarter. Communicate better. Move faster.</h2>
+              <p>Automate repetitive workplace tasks with structured AI prompts and professional outputs.</p>
+              <button class="primary-btn" data-view="email">Start with Email Generator →</button>
+            </div>
+            <div class="hero-orb"><span>✦</span></div>
+          </div>
+
+          <div class="section-heading">
+            <div><span class="eyebrow">QUICK ACTIONS</span><h3>What would you like to do?</h3></div>
+          </div>
+          <div class="feature-grid">
+            <button class="feature-card" data-view="email">
+              <div class="feature-icon">✉</div><h4>Smart Email</h4><p>Generate clear emails by audience, tone and purpose.</p><span>Open tool →</span>
+            </button>
+            <button class="feature-card" data-view="meeting">
+              <div class="feature-icon">▤</div><h4>Meeting Notes</h4><p>Turn notes into decisions, actions and deadlines.</p><span>Open tool →</span>
+            </button>
+            <button class="feature-card" data-view="tasks">
+              <div class="feature-icon">✓</div><h4>Task Planner</h4><p>Prioritize work and create a focused schedule.</p><span>Open tool →</span>
+            </button>
+            <button class="feature-card" data-view="research">
+              <div class="feature-icon">⌕</div><h4>Research Assistant</h4><p>Extract insights and simplify complex topics.</p><span>Open tool →</span>
+            </button>
+            <button class="feature-card" data-view="chat">
+              <div class="feature-icon">◌</div><h4>AI Chatbot</h4><p>Ask questions and simulate a workplace assistant.</p><span>Open tool →</span>
+            </button>
+          </div>
+
+          <div class="dashboard-bottom">
+            <div class="panel">
+              <div class="panel-title"><div><span class="eyebrow">WORKFLOW</span><h3>How the assistant works</h3></div></div>
+              <div class="workflow">
+                <div><b>01</b><strong>Understand</strong><span>Capture context, audience and objective.</span></div>
+                <div><b>02</b><strong>Prompt</strong><span>Apply a structured role + task + constraints prompt.</span></div>
+                <div><b>03</b><strong>Generate</strong><span>Create a professional first draft.</span></div>
+                <div><b>04</b><strong>Review</strong><span>Human validates accuracy before use.</span></div>
+              </div>
+            </div>
+            <div class="panel impact">
+              <span class="eyebrow">PROJECT VALUE</span>
+              <h3>Built for real workplace productivity</h3>
+              <p>Reduce repetitive drafting, summarization and planning effort while keeping humans responsible for final decisions.</p>
+              <div class="metric-row"><div><strong>5</strong><span>AI tools</span></div><div><strong>4</strong><span>prompt layers</span></div><div><strong>1</strong><span>review step</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="view" id="view-email">
+          <div class="tool-header"><div><span class="eyebrow">AI TOOL 01</span><h2>Smart Email Generator</h2><p>Generate a professional email tailored to your audience, purpose and tone.</p></div><div class="tool-badge">PROMPT ENGINEERED</div></div>
+          <div class="tool-layout">
+            <div class="panel form-panel">
+              <label>Audience<select id="emailAudience"><option>Client</option><option>Manager</option><option>Team</option><option>Recruiter</option></select></label>
+              <label>Tone<select id="emailTone"><option>Formal</option><option>Friendly</option><option>Persuasive</option><option>Concise</option></select></label>
+              <label>Purpose / context<textarea id="emailContext" placeholder="e.g. Request a project deadline extension because testing is taking longer than expected."></textarea></label>
+              <label>Key points <input id="emailPoints" placeholder="Include revised date, reason and appreciation"></label>
+              <button class="primary-btn full" id="generateEmail">✦ Generate professional email</button>
+              <div class="loading" id="emailLoading"><span></span> Applying structured prompt...</div>
+            </div>
+            <div class="panel output-panel">
+              <div class="output-head"><div><span class="eyebrow">AI OUTPUT</span><h3>Generated email</h3></div><button class="ghost-btn" data-copy="emailOutput">Copy</button></div>
+              <div class="output" id="emailOutput"><div class="empty-state"><div>✉</div><p>Your professional email will appear here.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEETING -->
+        <div class="view" id="view-meeting">
+          <div class="tool-header"><div><span class="eyebrow">AI TOOL 02</span><h2>Meeting Notes Summarizer</h2><p>Convert lengthy notes into concise workplace-ready summaries.</p></div><div class="tool-badge">EXTRACTION</div></div>
+          <div class="tool-layout">
+            <div class="panel form-panel">
+              <label>Meeting notes<textarea id="meetingInput" class="tall" placeholder="Paste meeting notes here..."></textarea></label>
+              <label>Summary style<select id="meetingStyle"><option>Executive summary</option><option>Team update</option><option>Action-focused</option></select></label>
+              <button class="primary-btn full" id="generateMeeting">✦ Summarize meeting</button>
+              <div class="loading" id="meetingLoading"><span></span> Extracting decisions and actions...</div>
+            </div>
+            <div class="panel output-panel">
+              <div class="output-head"><div><span class="eyebrow">AI OUTPUT</span><h3>Meeting summary</h3></div><button class="ghost-btn" data-copy="meetingOutput">Copy</button></div>
+              <div class="output" id="meetingOutput"><div class="empty-state"><div>▤</div><p>Key points, decisions, actions and deadlines will appear here.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TASKS -->
+        <div class="view" id="view-tasks">
+          <div class="tool-header"><div><span class="eyebrow">AI TOOL 03</span><h2>AI Task Planner</h2><p>Turn a list of responsibilities into a prioritized and time-aware work plan.</p></div><div class="tool-badge">PRIORITIZATION</div></div>
+          <div class="tool-layout">
+            <div class="panel form-panel">
+              <label>Your tasks<textarea id="tasksInput" class="tall" placeholder="Example:
+Finish project documentation - due today
+Test application - due tomorrow
+Prepare presentation - due Friday
+Review GitHub README - low urgency"></textarea></label>
+              <label>Available work time<select id="taskTime"><option>Morning (08:00–12:00)</option><option>Full day (08:00–17:00)</option><option>Afternoon (13:00–17:00)</option></select></label>
+              <button class="primary-btn full" id="generateTasks">✦ Build my work plan</button>
+              <div class="loading" id="tasksLoading"><span></span> Prioritizing tasks...</div>
+            </div>
+            <div class="panel output-panel">
+              <div class="output-head"><div><span class="eyebrow">AI OUTPUT</span><h3>Prioritized plan</h3></div><button class="ghost-btn" data-copy="tasksOutput">Copy</button></div>
+              <div class="output" id="tasksOutput"><div class="empty-state"><div>✓</div><p>Your prioritized schedule will appear here.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESEARCH -->
+        <div class="view" id="view-research">
+          <div class="tool-header"><div><span class="eyebrow">AI TOOL 04</span><h2>AI Research Assistant</h2><p>Transform a topic or source text into clear insights and practical recommendations.</p></div><div class="tool-badge">SYNTHESIS</div></div>
+          <div class="tool-layout">
+            <div class="panel form-panel">
+              <label>Research topic<textarea id="researchInput" class="tall" placeholder="e.g. How generative AI can improve productivity in small businesses"></textarea></label>
+              <label>Audience<select id="researchAudience"><option>Business professional</option><option>Student</option><option>Executive</option><option>Technical team</option></select></label>
+              <label>Depth<select id="researchDepth"><option>Quick overview</option><option>Detailed</option><option>Decision brief</option></select></label>
+              <button class="primary-btn full" id="generateResearch">✦ Generate research brief</button>
+              <div class="loading" id="researchLoading"><span></span> Synthesizing insights...</div>
+            </div>
+            <div class="panel output-panel">
+              <div class="output-head"><div><span class="eyebrow">AI OUTPUT</span><h3>Research brief</h3></div><button class="ghost-btn" data-copy="researchOutput">Copy</button></div>
+              <div class="output" id="researchOutput"><div class="empty-state"><div>⌕</div><p>Insights and recommendations will appear here.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHAT -->
+        <div class="view" id="view-chat">
+          <div class="tool-header"><div><span class="eyebrow">AI TOOL 05</span><h2>AI Workplace Chatbot</h2><p>Ask for help with workplace communication, planning and productivity.</p></div><div class="tool-badge">CONVERSATIONAL AI</div></div>
+          <div class="chat-panel panel">
+            <div class="chat-messages" id="chatMessages">
+              <div class="message ai"><div class="chat-avatar">AI</div><div><span class="msg-label">Workplace AI</span><p>Hello! I can help you draft emails, plan tasks, summarize information or prepare a professional response. What are you working on?</p></div></div>
+            </div>
+            <div class="suggestions">
+              <button data-chat="Help me prioritize my work for today.">Prioritize my day</button>
+              <button data-chat="Help me write a professional follow-up email.">Write a follow-up</button>
+              <button data-chat="Give me a concise meeting agenda.">Create an agenda</button>
+            </div>
+            <div class="chat-input"><textarea id="chatInput" rows="1" placeholder="Ask your workplace assistant..."></textarea><button class="primary-btn" id="sendChat">Send ↑</button></div>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="view" id="view-about">
+          <div class="tool-header"><div><span class="eyebrow">PROJECT DOCUMENTATION</span><h2>Responsible AI & Prompt Strategy</h2><p>The prototype demonstrates structured prompting, human review and practical workplace value.</p></div></div>
+          <div class="docs-grid">
+            <div class="panel doc-card"><span class="doc-num">01</span><h3>Prompt structure</h3><p><b>Role</b> → Define the professional AI role.</p><p><b>Context</b> → Provide audience, objective and source information.</p><p><b>Task</b> → State exactly what must be generated or extracted.</p><p><b>Constraints</b> → Specify tone, format, length and accuracy requirements.</p><p><b>Review</b> → Ask the user to validate the output before use.</p></div>
+            <div class="panel doc-card"><span class="doc-num">02</span><h3>Responsible AI</h3><p>AI can produce inaccurate, incomplete or biased information. Users should verify facts, dates, names, figures and sensitive workplace information.</p><div class="notice">AI-generated content may require human review</div></div>
+            <div class="panel doc-card"><span class="doc-num">03</span><h3>Expected impact</h3><p>Reduce repetitive administrative effort, improve consistency of workplace communication, accelerate summarization and support better task prioritization.</p><p class="muted">This is a functional front-end prototype. AI outputs are simulated locally so the project can be demonstrated without exposing an API key.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">AI Workplace Productivity Assistant <span>•</span> AI-generated content may require human review</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast">Copied to clipboard</div>
+  <script src="app.js"></script>
+</body>
+</html>
